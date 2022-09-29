@@ -80,7 +80,7 @@
 
   document.write("O consumo de Gasolina é " + consumoDeGasolina + " km/L");
   document.write("<br>");
-
+  
   var caminhoComAlcool = 300;
   var consumoDeAlcool = caminhoComAlcool / tanque;
   document.write("O consumo de Álcool é " + consumoDeAlcool + " km/L");
@@ -88,6 +88,48 @@
   
   document.write("//-------------------------- Unidade 1.4 --------------------//" + "<br>");  
   
+  //Estta função será linda primeiro antes de qualquer coisa.
+  //Porém por boas práticas devemos colocar as funções sempre no início dentro da tag "script".
+  function pulaLinha() {
+    document.write("<br>");
+  }
+
+  document.write("Flávio tem " + (ano - 1977) + " anos");
+
+  pulaLinha();
+
+  document.write("Joaquim tem " + (ano - 1996) + " anos");
+
+  pulaLinha();
+
+  println("Oi1");
+  println();
+  println("Oi2");
+  println();
+  println("Oi3");
+  println();
+
+  print("teste1")
+  print();
+  print("teste2")
+  print();
+  print("teste3")
+
+  function println(texto) {
+    if(texto == null){
+      document.write("<br>");
+    }else{
+      document.write(texto + "<br>");
+    }
+  }
+
+  function print(texto) {
+    if (texto == null) {
+      document.write("");
+    } else {
+      document.write(texto);
+    }
+  }  
 
   document.write("<br> <br>");
 </script>
