@@ -1,11 +1,13 @@
 <meta charset="UTF-8">
 
 <script>
+  document.write("//-------------------------- Unidade 1.1 --------------------//" + "<br>");
   //alert ("A idade de Flávio é")
   document.write("A idade do Flávio é ");
   document.write(18 + 20);
-  document.write("<br>");
+  document.write("<br> <br>");
 
+  document.write("//-------------------------- Unidade 1.2 --------------------//" + "<br>");
   document.write("18" + "20");
   document.write("18" + 20);
   document.write("<br>");
@@ -24,5 +26,68 @@
   
   document.write("A média do valor gasto com as viagens é ");
   document.write((200 + 100 + 300 + 400) / 4);
+  document.write("<br> <br>");
+
+  document.write("//-------------------------- Unidade 1.3 --------------------//" + "<br>");
+  var ano = 2016;
+
+  document.write("A variável ano é " + ano + "<br>");
+
+  document.write("Flávio tem " + (ano - 1977) + " anos");
   document.write("<br>");
+  document.write("Joaquim tem " + (ano - 1996) + " anos");
+  document.write("<br>");
+
+  ano = 2017;
+  document.write("Barney tem " + (ano - 1976) + " anos");
+  document.write("<br>");  
+
+  var idadeFlavio = 39;
+  var idadeJoaquim = 20;
+  var idadeBarney = 41;  
+  
+  //var media = (39 + 20 + 41) / 3;
+  var media = (idadeFlavio + idadeJoaquim + idadeBarney) / 3;
+
+  //document.write('A média das idades é ' + media + "<br>");
+  document.write('A média das idades é ' + Math.round(media) + "<br>");
+
+  var nome = "Flávio";
+  document.write("<br>");
+
+  document.write("A idade de " + nome + " é " + idadeFlavio);
+  document.write("<br> <br>");
+
+  var IDADE1 = 10;
+  var IDADE2 = "20";
+  var IDADE3 = 12;
+
+  document.write("A média das idades é <br>");
+  document.write((IDADE1 + IDADE2 + IDADE3) / 3); // 102012 / 3 = 34004
+  document.write("<br> <br>");
+
+  /*
+  Seu carro tem um tanque de 40 litros e pode utilizar álcool ou gasolina.
+
+  Com gasolina e usando todo o tanque você percorre um caminho com gasolina de 480 quilômetros. Qual é o consumo de gasolina`?
+
+  Com álcool, um tanque de 40 litros fez um caminho com Álcool de 300 quilômetros. Qual é o consumo de Álcool?
+  */
+
+  var tanque = 40;
+  var caminhoComGasolina = 480;
+  var consumoDeGasolina = caminhoComGasolina / tanque;
+
+  document.write("O consumo de Gasolina é " + consumoDeGasolina + " km/L");
+  document.write("<br>");
+
+  var caminhoComAlcool = 300;
+  var consumoDeAlcool = caminhoComAlcool / tanque;
+  document.write("O consumo de Álcool é " + consumoDeAlcool + " km/L");
+  document.write("<br> <br>");
+  
+  document.write("//-------------------------- Unidade 1.4 --------------------//" + "<br>");  
+  
+
+  document.write("<br> <br>");
 </script>
