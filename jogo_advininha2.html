@@ -18,30 +18,26 @@
     var numeroPensado = Math.round(Math.random() * 10);
     console.log(numeroPensado);
 
-    var chute = parseInt(prompt("digite seu chute!"));
-    /*var chute = 0;
-    
-    while(numeroPensado != chute) {
-      chute = parseInt(prompt("digite seu chute!"));
+    var tentativas = 1;
+
+    while (tentativas <= 3) {
+
+      var chute = parseInt(prompt("Digite seu chute!"));
 
       if (chute == numeroPensado) {
-        mostra("Você acertou!");
-      }else if(chute != numeroPensado) {
-        mostra("Você errou!");
+
+        mostra("Você ACERTOU, o número pensado era " + numeroPensado);
+        break;
+
+      } else {
+
+        mostra("Você ERROU!");
       }
-    }*/
 
-    /*if (chute == numeroPensado) {
-      mostra("Você acertou!");
-    } else if (chute != numeroPensado) {
-      mostra("Você errou!");
-    }*/
+      tentativas++;
+    }
 
-    if (chute == numeroPensado) {
-      mostra("Você acertou!");
-    } else {
-      mostra("Você errou!");
-    }    
+    mostra("FIM");
 
   </script>    
 </body>
