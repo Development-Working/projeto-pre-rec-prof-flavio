@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jogo Advinhação HTML</title>
+</head>
+<body>
+  <script>
+    function pulaLinha() { document.write("<br>"); }
+    function mostra(frase) { document.write(frase); pulaLinha(); }
+
+    document.write("//-------------------------- Unidade 1.5 --------------------//" + "<br>");
+    pulaLinha();
+
+    //var numeroPensado = 5;
+    var numeroPensado = Math.round(Math.random() * 10);
+    console.log(numeroPensado);
+
+    var chute = parseInt(prompt("digite seu chute!"));
+    /*var chute = 0;
+    
+    while(numeroPensado != chute) {
+      chute = parseInt(prompt("digite seu chute!"));
+
+      if (chute == numeroPensado) {
+        mostra("Você acertou!");
+      }else if(chute != numeroPensado) {
+        mostra("Você errou!");
+      }
+    }*/
+
+    /*if (chute == numeroPensado) {
+      mostra("Você acertou!");
+    } else if (chute != numeroPensado) {
+      mostra("Você errou!");
+    }*/
+
+    if (chute == numeroPensado) {
+      mostra("Você acertou!");
+    } else {
+      mostra("Você errou!");
+    }    
+
+  </script>    
+</body>
+</html>
