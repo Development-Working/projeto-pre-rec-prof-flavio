@@ -4,25 +4,37 @@
 <button>Compare com o meu segredo</button>
 <script>
   //var segredo = 5;
-  var segredo = Math.round(Math.random() * 10);
+  //var segredo = Math.round(Math.random() * 10);
+  var segredos = [5, 7, 10, 2, 3];
+
   var input = document.querySelector("input");
   input.focus();
 
   function verifica() {
 
-    if (input.value == segredo) {
+    var achou = false;
 
-      alert("Você ACERTOU!");
-    } else {
+    for (var posicao = 0; posicao < segredos.length; posicao++) {
 
-      alert("Você ERROU!!!!!!!!");
+      if (input.value == segredos[posicao]) {
+
+        alert("Você ACERTOU!");
+        achou = true;
+        break;
+      }
+    }
+
+    if (achou == false) {
+      alert("Você ERROU!");
     }
 
     input.value = "";
     input.focus();
+
   }
 
   var button = document.querySelector("button");
+
 
   button.onclick = verifica; //Onclic vai receber todo o texto da função "verifica()"
 
