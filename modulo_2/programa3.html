@@ -1,36 +1,19 @@
 <canvas width="600" height="400"></canvas>
 
 <script>
+  var tela = document.querySelector('canvas');
+  var pincel = tela.getContext('2d');
 
-  function desenhaQuadrado(x, y, cor) {
+  pincel.fillStyle = 'grey';
+  pincel.fillRect(0, 0, 600, 400);
 
-    var tela = document.querySelector('canvas');
-    var pincel = tela.getContext('2d');
+  function exibeAlerta(evento) {
 
-    pincel.fillStyle = cor;
-    pincel.fillRect(x, y, 50, 50);
-    pincel.strokeStyle = 'black';
-    pincel.strokeRect(x, y, 50, 50);
+    alert('Cliquei');
+    console.log(evento);
 
   }
 
-  /*
-  var x = 0;
-
-  while(x < 600) {
-
-    desenhaQuadrado(x, 0, 'green');
-    desenhaQuadrado(x, 50, 'red');
-    desenhaQuadrado(x, 100, 'blue');
-
-    x = x + 50;
-  }
- */
-
-  for (var x = 0; x < 600; x = x + 50) {
-    desenhaQuadrado(x, 0, 'green');
-    desenhaQuadrado(x, 50, 'red');
-    desenhaQuadrado(x, 100, 'blue');
-  }
+  tela.onclick = exibeAlerta;
 
 </script>
