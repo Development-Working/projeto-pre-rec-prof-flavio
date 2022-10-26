@@ -1,7 +1,7 @@
 //variáveis da bolinha
 let xBolinha = 300;
 let yBolinha = 200;
-let diametro = 15;
+let diametro = 13;
 let raio = diametro / 2;
 
 //velocidade da bolinha
@@ -26,23 +26,18 @@ let meusPontos = 0;
 let pontosDoOponente = 0;
 
 //sons do jogo
-let raquetada;
 let ponto;
+let raquetada;
 let trilha;
 
 function preload() {
   trilha = loadSound("trilha.mp3");
-  ponto = loadSound("ponto.mp3");
   raquetada = loadSound("raquetada.mp3");
+  ponto = loadSound("ponto.mp3");
 }
-
-/*function setup() {
-  createCanvas(600, 400);
-}*/
 
 function setup() {
   createCanvas(600, 400);
-  //trilha.play();
   trilha.loop();
 }
 
@@ -97,11 +92,8 @@ function movimentaMinhaRaquete() {
 }
 
 function verificaColisaoRaquete() {
-  if (xBolinha - raio < xRaquete + raqueteComprimento &&
-    yBolinha - raio < yRaquete + raqueteAltura &&
-    yBolinha + raio > yRaquete) {
+  if (xBolinha - raio < xRaquete + raqueteComprimento && yBolinha - raio < yRaquete + raqueteAltura && yBolinha + raio > yRaquete) {
     velocidadeXBolinha *= -1;
-    raquetada.play();
   }
 }
 
@@ -114,25 +106,10 @@ function verificaColisaoRaquete(x, y) {
   }
 }
 
-/*function movimentaRaqueteOponente(){
+function movimentaRaqueteOponente() {
   velocidadeYOponente = yBolinha - yRaqueteOponente - raqueteComprimento / 2 - 30;
   yRaqueteOponente += velocidadeYOponente
-}*/
-
-function movimentaRaqueteOponente() {
-  if (keyIsDown(87)) {
-    yRaqueteOponente -= 10;
-  }
-  if (keyIsDown(83)) {
-    yRaqueteOponente += 10;
-  }
 }
-
-/*function incluiPlacar(){
-  fill(255);
-  text(meusPontos, 278, 26);
-  text(pontosDoOponente, 321, 26)
-}*/
 
 function incluiPlacar() {
   stroke(255);
@@ -158,6 +135,3 @@ function marcaPonto() {
     ponto.play();
   }
 }
-
-
-
