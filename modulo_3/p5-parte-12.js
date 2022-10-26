@@ -22,6 +22,10 @@ let velocidadeYOponente;
 
 let colidiu = false;
 
+//placar do jogo
+let meusPontos = 0;
+let pontosDoOponente = 0;
+
 function draw() {
   background(0);
   mostraBolinha();
@@ -30,9 +34,34 @@ function draw() {
   //mostraRaquete();
   mostraRaquete(xRaquete, yRaquete);
   movimentaMinhaRaquete();
-  colisaoMinhaRaqueteBiblioteca();
+  //colisaoMinhaRaqueteBiblioteca();
+  verificaColisaoRaquete(xRaquete, yRaquete);
   mostraRaquete(xRaqueteOponente, yRaqueteOponente);
   movimentaRaqueteOponente();
+  //colisaoRaqueteOponenteBiblioteca();
+  verificaColisaoRaquete(xRaqueteOponente, yRaqueteOponente);
+  incluiPlacar();
+  marcaPonto();
+}
+
+function marcaPonto() {
+  if (xBolinha > 587) {
+    meusPontos += 1;
+  }
+  if (xBolinha < 15) {
+    pontosDoOponente += 1;
+  }
+}
+
+function incluiPlacar() {
+  fill(255);
+  text(meusPontos, 278, 26);
+  text(pontosDoOponente, 321, 26);
+}
+
+function movimentaBolinha() {
+  xBolinha += velocidadeXBolinha;
+  yBolinha += velocidadeYBolinha;
 }
 
 function verificaColisaoRaquete() {
@@ -43,18 +72,27 @@ function verificaColisaoRaquete() {
   }
 }
 
-
 /*function colisaoMinhaRaqueteBiblioteca() {
-    collideRectCircle(200, 200, 100, 150, mouseX, mouseY, 100);
-}*/
-
-function colisaoMinhaRaqueteBiblioteca() {
   colidiu = collideRectCircle(
     xRaquete, yRaquete,
     raqueteComprimento,
     raqueteAltura, xBolinha, yBolinha, raio
   );
 
+  if (colidiu) {
+    velocidadeXBolinha *= -1;
+  }
+}
+
+function colisaoRaqueteOponenteBiblioteca() {
+    colidiu = collideRectCircle(xRaqueteOponente, yRaqueteOponente, raqueteComprimento, raqueteAltura, xBolinha, yBolinha, raio);
+    if (colidiu){
+        velocidadeXBolinha *= -1;
+    }
+}*/
+
+function verificaColisaoRaquete(x, y) {
+  colidiu = collideRectCircle(x, y, raqueteComprimento, raqueteAltura, xBolinha, yBolinha, raio);
   if (colidiu) {
     velocidadeXBolinha *= -1;
   }
@@ -74,28 +112,12 @@ function movimentaRaqueteOponente() {
   yRaqueteOponente += velocidadeYOponente
 }
 
-/*
-function mostraRaquete() {
-    rect(xRaquete, yRaquete, raqueteComprimento, raqueteAltura);
-}*/
-
-/*
-function mostraRaqueteOponente() {
-    rect(xRaqueteOponente, yRaqueteOponente, raqueteComprimento, raqueteAltura);
-}
-*/
-
 function mostraRaquete(x, y) {
   rect(x, y, raqueteComprimento, raqueteAltura);
 }
 
 function mostraBolinha() {
   circle(xBolinha, yBolinha, diametro);
-}
-
-function movimentaBolinha() {
-  xBolinha += velocidadeXBolinha;
-  yBolinha += velocidadeYBolinha;
 }
 
 function verificaColisaoBorda() {
