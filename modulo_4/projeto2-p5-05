@@ -1,0 +1,117 @@
+//----------------------------------------------------
+
+sketch.js:
+
+function setup() {
+  createCanvas(500, 400);
+}
+
+function draw() {
+  background(imagemDaEstrada);
+  mostraAtor();
+  mostraCarro();
+  movimentaCarro();
+  movimentaAtor();
+  voltaPosicaoInicialDoCarro();
+}
+
+//----------------------------------------------------
+
+ator.js:
+
+//código do ator
+let xAtor = 100;
+let yAtor = 366;
+
+function mostraAtor() {
+  image(imagemDoAtor, xAtor, yAtor, 30, 30);
+}
+
+function movimentaAtor() {
+  if (keyIsDown(UP_ARROW)) {
+    yAtor -= 3;
+  }
+  if (keyIsDown(DOWN_ARROW)) {
+    yAtor += 3;
+  }
+}
+//----------------------------------------------------
+
+carro.js:
+
+//código do carro
+
+//carro 1
+let xCarro = 600;
+let yCarro = 40;
+let velocidadeCarro1 = 2;
+
+//carro 2
+let xCarro2 = 600;
+let yCarro2 = 96;
+let velocidadeCarro2 = 2.5;
+
+//carro 3
+let xCarro3 = 600;
+let yCarro3 = 150;
+let velocidadeCarro3 = 3.2;
+
+function mostraCarro() {
+  image(imagemCarro, xCarro, yCarro, 50, 40);
+  image(imagemCarro2, xCarro2, yCarro2, 50, 40);
+  image(imagemCarro3, xCarro3, yCarro3, 50, 40);
+}
+
+function movimentaCarro() {
+  xCarro -= velocidadeCarro1;
+  xCarro2 -= velocidadeCarro2;
+  xCarro3 -= velocidadeCarro3;
+}
+
+function voltaPosicaoInicialDoCarro() {
+  if (xCarro < -50) {
+    xCarro = 600
+  }
+  if (xCarro2 < -50) {
+    xCarro2 = 600
+  }
+  if (xCarro3 < -50) {
+    xCarro3 = 600
+  }
+}
+
+//----------------------------------------------------
+
+imagens.js:
+// imagens do jogo
+let imagemDaEstrada;
+let imagemDoAtor;
+let imagemCarro;
+let imagemCarro2;
+let imagemCarro3;
+
+function preload() {
+  imagemDaEstrada = loadImage("imagens/estrada.png");
+  imagemDoAtor = loadImage("imagens/ator-1.png");
+  imagemCarro = loadImage("imagens/carro-1.png");
+  imagemCarro2 = loadImage("imagens/carro-2.png");
+  imagemCarro3 = loadImage("imagens/carro-3.png");
+}
+
+//----------------------------------------------------
+
+index.html:
+
+< !DOCTYPE html > <html><head>
+  <script src="p5.min.js"></script>
+  <script src="p5.dom.min.js"></script>
+  <script src="p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+</head>
+<body>
+  <script src="sketch.js"></script>
+  <script src="imagens.js"></script>
+  <script src="ator.js"></script>
+  <script src="carro.js"></script>
+</body></html>
