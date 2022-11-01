@@ -1,0 +1,11 @@
+let palavras = ["Dia", "programar", "javascript", "de"]
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  console.log(palavras[0],palavras[3],palavras[1],palavras[2])
+  noLoop();
+}
